@@ -1,20 +1,36 @@
 local keymap = vim.keymap
 
--- new tab
-keymap.set('n', 'ee', ':tabedit<Return>', { silent = true })
+keymap.set('n', 'x', '"_x')
 
--- select all
+-- Increment/decrement
+keymap.set('n', '+', '<C-a>')
+keymap.set('n', '-', '<C-x>')
+
+-- Delete a word backwards
+keymap.set('n', 'dw', 'vb"_d')
+
+-- Select all
 keymap.set('n', '<C-a>', 'gg<S-v>G')
 
--- screen splits
-keymap.set('n', 'sv', ':vsplit<Return>', { silent = true })
-keymap.set('n', 'sh', ':split<Return>', { silent = true })
+-- Save with root permission (not working for now)
+--vim.api.nvim_create_user_command('W', 'w !sudo tee > /dev/null %', {})
 
--- paste
-vim.api.nvim_set_keymap('n', '<leader>p', '"*p', { noremap = true })
-vim.api.nvim_set_keymap('v', '<leader>p', '"*p', { noremap = true })
+-- New tab
+keymap.set('n', 'te', ':tabedit')
+-- Split window
+keymap.set('n', 'ss', ':split<Return><C-w>w')
+keymap.set('n', 'sv', ':vsplit<Return><C-w>w')
+-- Move window
+keymap.set('n', '<Space>', '<C-w>w')
+keymap.set('', 'sh', '<C-w>h')
+keymap.set('', 'sk', '<C-w>k')
+keymap.set('', 'sj', '<C-w>j')
+keymap.set('', 'sl', '<C-w>l')
 
+-- Resize window
+keymap.set('n', '<C-w><left>', '<C-w><')
+keymap.set('n', '<C-w><right>', '<C-w>>')
+keymap.set('n', '<C-w><up>', '<C-w>+')
+keymap.set('n', '<C-w><down>', '<C-w>-')
 
--- incolla
-
-keymap.set('n', 'ii', ':Incolla<Return>', { silent = true })
+keymap.set('n', 'gg', ':h netrw')

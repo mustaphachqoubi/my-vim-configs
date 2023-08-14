@@ -1,5 +1,4 @@
-# this is my config right now, and i am gonna update it always
-
+# My file structure
 
 ```
 .
@@ -13,11 +12,9 @@
 │       ├── comment.rc.lua
 │       ├── git.rc.lua
 │       ├── gitsigns.rc.lua
-│       ├── incola.rc.lua
 │       ├── lsp-colors.rc.lua
 │       ├── lspkind.rc.lua
 │       ├── lualine.rc.lua
-│       ├── nord.rc.lua
 │       ├── telescope.rc.lua
 │       ├── treesitter.rc.lua
 │       ├── ts-autotag.rc.lua
@@ -26,11 +23,18 @@
 ├── init.lua
 ├── lua
 │   └── mustaphachqoubi
-│       ├── imgs
-│       │   └── t.png
+│       ├── base.lua
+│       ├── highlights.lua
+│       ├── linux.lua
+│       ├── macos.lua
 │       ├── maps.lua
-│       └── plugins.lua
+│       ├── plugins.lua
+│       ├── windows.lua
+│       └── wsl.lua
 └── plugin
-    └── packer_compiled.lua 
-
+    ├── 0_mason.rc.lua
+    ├── lspconfig.lua
+    ├── lspsaga.rc.lua
+    ├── null-ls.rc.lua
+    └── packer_compiled.lua
 ```

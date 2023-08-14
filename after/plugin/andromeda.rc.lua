@@ -1,1 +1,4 @@
-require("andromeda").setup()
+require("andromeda").setup({
+  preset = "andromeda",
+  transparent_bg = true
+})
